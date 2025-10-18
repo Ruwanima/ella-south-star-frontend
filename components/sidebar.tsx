@@ -25,7 +25,7 @@ export default function Sidebar({ onNavigate, currentPage, isDarkMode, onDarkMod
   ]
 
   return (
-    <aside className="w-56 bg-card border-r border-border p-6 flex flex-col">
+    <aside className="w-58 bg-card border-r border-border p-6 flex flex-col h-[calc(100vh-4rem)] overflow-hidden">
       <div className="space-y-2 flex-1">
         {menuItems.map((item) => {
           const Icon = item.icon
@@ -45,7 +45,7 @@ export default function Sidebar({ onNavigate, currentPage, isDarkMode, onDarkMod
         })}
       </div>
 
-      <div className="space-y-2 border-t border-border pt-4">
+      <div className="space-y-2 border-t border-border pt-4 mt-auto">
         <Link
           href="/home"
           className="w-full flex items-center gap-3 px-4 py-3 text-foreground hover:bg-muted rounded-lg"
