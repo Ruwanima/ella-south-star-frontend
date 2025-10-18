@@ -1,6 +1,6 @@
 "use client"
 
-import { Home, Users, Package, DollarSign, FileText, Star, Megaphone, Moon, LogOut, Globe } from "lucide-react"
+import { Home, Users, Package, DollarSign, FileText, Star, Megaphone, Moon, Sun, LogOut, Globe } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -56,10 +56,10 @@ export default function Sidebar({ onNavigate, currentPage, isDarkMode, onDarkMod
         
         <button
           onClick={() => onDarkModeToggle(!isDarkMode)}
-          className="w-full flex items-center gap-3 px-4 py-3 text-foreground hover:bg-muted rounded-lg"
+          className="w-full flex items-center gap-3 px-4 py-3 text-foreground hover:bg-muted rounded-lg transition-colors"
         >
-          <Moon size={20} />
-          <span className="text-sm font-medium">Dark Mode</span>
+          {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          <span className="text-sm font-medium">{isDarkMode ? "Light Mode" : "Dark Mode"}</span>
         </button>
 
         <button className="w-full flex items-center gap-3 px-4 py-3 text-destructive hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg">

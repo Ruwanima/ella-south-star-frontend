@@ -42,10 +42,10 @@ const staffData = [
 
 export default function StaffTable() {
   return (
-    <div className="bg-white rounded-lg border border-border overflow-hidden">
+    <div className="bg-card rounded-lg border border-border overflow-hidden shadow-sm">
       <table className="w-full">
         <thead>
-          <tr className="bg-muted border-b border-border">
+          <tr className="bg-muted/50 border-b border-border">
             <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Name</th>
             <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Email</th>
             <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Role</th>
@@ -61,14 +61,14 @@ export default function StaffTable() {
                 <div className="flex items-center gap-3">
                   <Avatar className="h-8 w-8">
                     <AvatarImage src={`/.jpg?height=32&width=32&query=${staff.avatar}`} />
-                    <AvatarFallback>{staff.avatar}</AvatarFallback>
+                    <AvatarFallback className="bg-primary/10 text-primary">{staff.avatar}</AvatarFallback>
                   </Avatar>
                   <span className="text-sm font-medium text-foreground">{staff.name}</span>
                 </div>
               </td>
               <td className="px-6 py-4 text-sm text-muted-foreground">{staff.email}</td>
               <td className="px-6 py-4">
-                <span className="inline-block px-3 py-1 bg-[#a0c49d] text-[#1e1e1e] rounded-full text-xs font-medium">
+                <span className="inline-block px-3 py-1 bg-primary/15 text-primary dark:bg-primary/25 dark:text-primary-foreground rounded-full text-xs font-medium">
                   {staff.role}
                 </span>
               </td>
@@ -78,7 +78,7 @@ export default function StaffTable() {
                     className={`w-10 h-6 rounded-full transition-colors ${staff.status ? "bg-primary" : "bg-muted"}`}
                   >
                     <div
-                      className={`w-5 h-5 rounded-full bg-white transition-transform ${staff.status ? "translate-x-5" : "translate-x-0.5"} mt-0.5`}
+                      className={`w-5 h-5 rounded-full bg-background border border-border transition-transform ${staff.status ? "translate-x-5" : "translate-x-0.5"} mt-0.5`}
                     />
                   </div>
                 </div>

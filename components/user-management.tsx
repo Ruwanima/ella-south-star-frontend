@@ -19,16 +19,16 @@ export default function UserManagement() {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-foreground">User Management</h1>
         <div className="flex items-center gap-4">
-          <button className="p-2 hover:bg-muted rounded-lg">
+          <button className="p-2 hover:bg-muted rounded-lg transition-colors">
             <Bell size={20} className="text-muted-foreground" />
           </button>
-          <div className="flex items-center gap-2 cursor-pointer">
+          <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
             <Avatar className="h-8 w-8">
               <AvatarImage src="/user-avatar.jpg" />
-              <AvatarFallback>SJ</AvatarFallback>
+              <AvatarFallback className="bg-primary text-primary-foreground">SJ</AvatarFallback>
             </Avatar>
             <div className="flex flex-col">
-              <span className="text-sm font-medium">Sarah Johnson</span>
+              <span className="text-sm font-medium text-foreground">Sarah Johnson</span>
               <span className="text-xs text-muted-foreground">Admin</span>
             </div>
             <ChevronDown size={16} className="text-muted-foreground" />
@@ -60,14 +60,14 @@ export default function UserManagement() {
           {activeTab === "staff" && (
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <button className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-sm hover:opacity-90 flex items-center gap-2">
+                <button className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-sm hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm">
                   <span>+</span> Add Staff Member
                 </button>
                 <div className="flex-1 relative">
                   <input
                     type="text"
                     placeholder="Search users..."
-                    className="w-full px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-card text-foreground"
+                    className="w-full px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring bg-input text-foreground placeholder:text-muted-foreground transition-colors"
                   />
                 </div>
               </div>
@@ -80,14 +80,14 @@ export default function UserManagement() {
           {activeTab === "guests" && (
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <button className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-sm hover:opacity-90 flex items-center gap-2">
+                <button className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-sm hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm">
                   <span>+</span> Add Guest
                 </button>
                 <div className="flex-1 relative">
                   <input
                     type="text"
                     placeholder="Search guests..."
-                    className="w-full px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-card text-foreground"
+                    className="w-full px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring bg-input text-foreground placeholder:text-muted-foreground transition-colors"
                   />
                 </div>
               </div>
@@ -99,14 +99,14 @@ export default function UserManagement() {
           {activeTab === "vendors" && (
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <button className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-sm hover:opacity-90 flex items-center gap-2">
+                <button className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-sm hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm">
                   <span>+</span> Add Vendor
                 </button>
                 <div className="flex-1 relative">
                   <input
                     type="text"
                     placeholder="Search vendors..."
-                    className="w-full px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-card text-foreground"
+                    className="w-full px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring bg-input text-foreground placeholder:text-muted-foreground transition-colors"
                   />
                 </div>
               </div>
@@ -118,14 +118,14 @@ export default function UserManagement() {
           {activeTab === "permissions" && (
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <button className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-sm hover:opacity-90 flex items-center gap-2">
+                <button className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-sm hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm">
                   <span>+</span> Add Permission
                 </button>
                 <div className="flex-1 relative">
                   <input
                     type="text"
                     placeholder="Search permissions..."
-                    className="w-full px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-card text-foreground"
+                    className="w-full px-4 py-2 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring bg-input text-foreground placeholder:text-muted-foreground transition-colors"
                   />
                 </div>
               </div>
