@@ -47,9 +47,11 @@ export default function ClientLayout({
               )
             })}
           </nav>
+          
 
           <div className="flex items-center gap-4">
-            <Link href="/dashboard">
+            
+            <Link href="/login">
               <Button variant="outline" size="sm">
                 Admin Portal
               </Button>
