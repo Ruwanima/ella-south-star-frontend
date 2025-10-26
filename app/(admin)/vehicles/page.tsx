@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import VehicleModal from "@/components/vehicle-modal"
 
 interface Vehicle {
   id: number
@@ -46,6 +47,8 @@ const vehicles: Vehicle[] = [
 ]
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
@@ -67,10 +70,11 @@ export default function Home() {
               className="pl-10 bg-muted border-0 text-foreground placeholder:text-muted-foreground"
             />
           </div>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+          <Button onClick={() => setIsModalOpen(true)} className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
             <Plus className="w-4 h-4" />
             Add Vehicle
           </Button>
+          <VehicleModal open={isModalOpen} onOpenChange={setIsModalOpen} />
         </div>
 
         {/* Vehicle Grid */}
