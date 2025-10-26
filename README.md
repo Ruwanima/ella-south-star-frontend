@@ -38,8 +38,8 @@ npm run dev
 
 ### Access the Application
 
-- **Client Portal (Default):** http://localhost:3000/home
-- **Admin Portal:** http://localhost:3000/dashboard
+- **Client Portal (Default):** http://localhost:3000
+- **Admin Portal:** http://localhost:3000/admin
 
 ---
 
