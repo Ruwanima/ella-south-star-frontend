@@ -2,7 +2,7 @@
 
 import { Home, Users, Package, DollarSign, FileText, Star, Megaphone, Moon, Sun, LogOut, Globe } from "lucide-react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 
 interface SidebarProps {
   onNavigate: (page: string) => void
@@ -13,6 +13,7 @@ interface SidebarProps {
 
 export default function Sidebar({ onNavigate, currentPage, isDarkMode, onDarkModeToggle }: SidebarProps) {
   const pathname = usePathname()
+  const router = useRouter()
 
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home, href: "/dashboard" },
@@ -61,7 +62,7 @@ export default function Sidebar({ onNavigate, currentPage, isDarkMode, onDarkMod
           <span className="text-base font-medium">{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
         </button>
 
-        <button className="w-full flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-lg">
+        <button onClick={() => router.push('/AdminLogin')} className="w-full flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-lg">
           <LogOut size={20} />
           <span className="text-sm font-medium">Logout</span>
         </button>
