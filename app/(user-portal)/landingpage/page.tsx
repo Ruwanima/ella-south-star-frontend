@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { Star, Menu, X, Wifi, MapPin, Utensils, Car, Calendar, Users, Mail, Phone, User, Facebook, Instagram, Twitter } from 'lucide-react';
 
@@ -79,9 +80,9 @@ export default function EllaSouthStarPage() {
               ))}
             </ul>
 
-            <button className="hidden md:block bg-emerald-700 text-white px-6 py-2 rounded-md hover:bg-emerald-800 transition">
+            <Link href="/booking" className="hidden md:block bg-emerald-700 text-white px-6 py-2 rounded-md hover:bg-emerald-800 transition">
               Book Now
-            </button>
+            </Link>
 
             <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -103,9 +104,9 @@ export default function EllaSouthStarPage() {
                   </li>
                 ))}
                 <li>
-                  <button className="w-full bg-emerald-700 text-white px-6 py-2 rounded-md hover:bg-emerald-800 transition">
+                  <Link href="/booking" className="block w-full bg-emerald-700 text-white px-6 py-2 rounded-md hover:bg-emerald-800 transition text-center">
                     Book Now
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -130,7 +131,7 @@ export default function EllaSouthStarPage() {
             </div>
           </div>
           <p className="text-xl md:text-2xl max-w-2xl">
-            Experience tranquility in the heart of Sri Lanka's hill country
+            Experience tranquility in the heart of Sri Lanka&apos;s hill country
           </p>
           <button className="mt-8 bg-emerald-700 text-white px-8 py-3 rounded-md hover:bg-emerald-800 transition text-lg">
             Explore Our Rooms
@@ -148,13 +149,13 @@ export default function EllaSouthStarPage() {
 
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Nestled in the misty mountains of Ella, South Star offers an unparalleled escape into nature's embrace.
+              Nestled in the misty mountains of Ella, South Star offers an unparalleled escape into nature&apos;s embrace.
               Our boutique resort combines modern luxury with traditional Sri Lankan hospitality, creating an experience
               that rejuvenates both body and soul.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               Wake up to breathtaking views of lush tea plantations, enjoy authentic local cuisine, and immerse yourself
-              in the serene beauty that has made Ella one of Sri Lanka's most treasured destinations.
+              in the serene beauty that has made Ella one of Sri Lanka&apos;s most treasured destinations.
             </p>
           </div>
         </div>
@@ -399,7 +400,7 @@ export default function EllaSouthStarPage() {
                 <MapPin className="w-10 h-10 text-emerald-700 group-hover:text-white transition-colors duration-300" />
               </div>
               <h3 className="text-xl font-semibold mb-2 group-hover:text-emerald-700 transition-colors">Sightseeing</h3>
-              <p className="text-gray-600 text-sm">Guided tours to Ella's best attractions</p>
+              <p className="text-gray-600 text-sm">Guided tours to Ella&apos;s best attractions</p>
             </div>
 
             {/* Service 4 */}
@@ -497,7 +498,7 @@ export default function EllaSouthStarPage() {
               </div>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Best hotel experience in Sri Lanka. The attention to detail, hospitality, and the overall ambiance made
-                this trip unforgettable. Can't wait to return!
+                this trip unforgettable. Can&apos;t wait to return!
               </p>
             </div>
           </div>
@@ -602,7 +603,7 @@ export default function EllaSouthStarPage() {
             <div>
               <h3 className="text-2xl font-serif mb-4">Ella</h3>
               <p className="text-emerald-200 text-sm leading-relaxed">
-                Your gateway to tranquility in Sri Lanka's beautiful hill country. Experience luxury, comfort, and
+                Your gateway to tranquility in Sri Lanka&apos;s beautiful hill country. Experience luxury, comfort, and
                 natural beauty.
               </p>
             </div>
