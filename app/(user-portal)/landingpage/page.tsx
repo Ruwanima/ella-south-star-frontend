@@ -57,9 +57,10 @@ export default function EllaSouthStarPage() {
   const navLinks = [
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About Us' },
-    { href: '#accommodations', label: 'Accommodations' },
+    { href: '/accommodations', label: 'Accommodations' },
+    { href: '/packages', label: 'Packages' },
     { href: '#services', label: 'Services' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -73,9 +74,15 @@ export default function EllaSouthStarPage() {
             <ul className="hidden md:flex space-x-8 text-sm">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-emerald-700 transition-colors">
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('#') ? (
+                    <a href={link.href} className="hover:text-emerald-700 transition-colors">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} className="hover:text-emerald-700 transition-colors">
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -94,13 +101,23 @@ export default function EllaSouthStarPage() {
               <ul className="space-y-3">
                 {navLinks.map((link) => (
                   <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className="block py-2 hover:text-emerald-700 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('#') ? (
+                      <a
+                        href={link.href}
+                        className="block py-2 hover:text-emerald-700 transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="block py-2 hover:text-emerald-700 transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
                 <li>

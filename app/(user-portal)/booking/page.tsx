@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Users, Calendar, Utensils, Wifi, MapPin as MapPinIcon, Car, Home, Plane } from 'lucide-react';
+import LandingHeader from '@/components/landing-header';
 
 export default function BookingPage() {
   const [bookingData, setBookingData] = useState({
@@ -26,6 +27,9 @@ export default function BookingPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
+      <LandingHeader />
+
       {/* Hero Section with Booking Form */}
       <section className="relative h-screen">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60 z-10"></div>
