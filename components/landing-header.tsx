@@ -12,6 +12,7 @@ export default function LandingHeader() {
     { href: '/landingpage#about', label: 'About Us' },
     { href: '/accommodations', label: 'Accommodations' },
     { href: '/packages', label: 'Packages' },
+    { href: '/vehicles', label: 'Vehicles' },
     { href: '/landingpage#services', label: 'Services' },
     { href: '/contact', label: 'Contact' },
   ];
