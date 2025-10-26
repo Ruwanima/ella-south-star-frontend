@@ -51,8 +51,8 @@ export default function Sidebar({
   };
 
   return (
-    <aside className="w-58 bg-card border-r border-border p-6 flex flex-col h-[calc(100vh-4rem)] overflow-hidden">
-      <div className="space-y-2 flex-1">
+    <aside className="w-64 bg-card border-r border-border p-6 flex flex-col h-[calc(100vh-4rem)] overflow-hidden">
+      <div className="space-y-3 flex-1">
         {menuItems.map((item) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;
@@ -66,14 +66,14 @@ export default function Sidebar({
                   : "text-foreground hover:bg-muted"
               }`}
             >
-              <Icon size={20} />
-              <span className="text-sm font-medium">{item.label}</span>
+              <Icon size={20} className={isActive ? 'text-white' : ''} />
+              <span className={`${isActive ? 'text-lg font-semibold' : 'text-sm font-medium'}`}>{item.label}</span>
             </Link>
           );
         })}
       </div>
 
-      <div className="space-y-2 border-t border-border pt-4 mt-auto">
+      <div className="space-y-3 pt-4 mt-auto">
         <Link
           href="/"
           className="w-full flex items-center gap-3 px-4 py-3 text-foreground hover:bg-muted rounded-lg"
@@ -84,7 +84,7 @@ export default function Sidebar({
 
         <button
           onClick={() => onDarkModeToggle(!isDarkMode)}
-          className="w-full flex items-center gap-3 px-4 py-3 text-foreground hover:bg-muted rounded-lg transition-colors"
+          className={`w-full flex items-center gap-4 px-6 py-3 ${isDarkMode ? 'bg-slate-700 text-white' : 'bg-slate-50 text-black'} rounded-2xl shadow-sm transition-colors`}
         >
           {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
           <span className="text-sm font-medium">
