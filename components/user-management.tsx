@@ -18,7 +18,7 @@ export default function UserManagement() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-foreground">User Management</h1>
-        <div className="flex items-center gap-4">
+        {/* <div className="flex items-center gap-4">
           <button className="p-2 hover:bg-muted rounded-lg transition-colors">
             <Bell size={20} className="text-muted-foreground" />
           </button>
@@ -33,7 +33,7 @@ export default function UserManagement() {
             </div>
             <ChevronDown size={16} className="text-muted-foreground" />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="flex gap-6">
