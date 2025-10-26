@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import {
   LineChart,
@@ -68,6 +69,10 @@ function KPICard({ title, value, trend, trendPositive, icon }: KPICardProps) {
 }
 
 export default function Dashboard() {
+  useEffect(() => {
+    document.title = "Hotel Admin Dashboard";
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50 p-6 sm:p-8 lg:p-12">
       <div className="max-w-7xl mx-auto">
