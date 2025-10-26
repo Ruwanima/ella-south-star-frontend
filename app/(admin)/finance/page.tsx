@@ -1,9 +1,14 @@
 "use client"
 
+import { useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { DollarSign, TrendingUp, CreditCard, Wallet } from "lucide-react"
 
 export default function FinancePage() {
+  useEffect(() => {
+    document.title = "Hotel Admin Dashboard - Finance";
+  }, []);
+
   return (
     <div className="space-y-6">
       <div>

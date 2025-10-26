@@ -1,10 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Star, Menu, X, Wifi, MapPin, Utensils, Car, Calendar, Users, Mail, Phone, User, Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function EllaSouthStarPage() {
+  useEffect(() => {
+    document.title = "Ella SOUTH STAR";
+  }, []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bookingFormData, setBookingFormData] = useState({
     name: '',

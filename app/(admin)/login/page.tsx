@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Eye, EyeOff } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation" // <-- import useRouter
@@ -11,6 +11,10 @@ export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [rememberMe, setRememberMe] = useState(false)
+
+  useEffect(() => {
+    document.title = "Hotel Admin Dashboard - Login";
+  }, []);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
