@@ -37,11 +37,11 @@ export default function Sidebar({
     { id: "dashboard", label: "Dashboard", icon: Home, href: "/dashboard" },
     { id: "user-management", label: "User Management", icon: Users, href: "/user-management" },
     { id: "inventory", label: "Inventory", icon: Package, href: "/inventory" },
-    { id: "finance", label: "Finance", icon: DollarSign, href: "/finance" },
-    { id: "reports", label: "Reports", icon: FileText, href: "/reports" },
-    { id: "reviews", label: "Reviews", icon: Star, href: "/reviews" },
-    { id: "vehicles", label: "Vehicles", icon: Car, href: "/vehicles" },
     { id: "sales-marketing", label: "Sales & Marketing", icon: Megaphone, href: "/sales-marketing" },
+    { id: "finance", label: "Finance", icon: DollarSign, href: "/finance" },
+    { id: "vehicles", label: "Vehicles", icon: Car, href: "/vehicles" },
+    { id: "reviews", label: "Reviews", icon: Star, href: "/reviews" },
+    { id: "reports", label: "Reports", icon: FileText, href: "/reports" },
   ];
 
   const handleLogout = () => {
