@@ -61,6 +61,7 @@ export default function EllaSouthStarPage() {
     { href: '#about', label: 'About Us' },
     { href: '#accommodations', label: 'Accommodations' },
     { href: '#services', label: 'Services' },
+    
     { href: '#contact', label: 'Contact' },
   ];
 
