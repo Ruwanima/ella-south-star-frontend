@@ -21,6 +21,7 @@ export default function Sidebar({ onNavigate, currentPage, isDarkMode, onDarkMod
     { id: "finance", label: "Finance", icon: DollarSign, href: "/finance" },
     { id: "reports", label: "Reports", icon: FileText, href: "/reports" },
     { id: "reviews", label: "Reviews", icon: Star, href: "/reviews" },
+    { id: "vehicles", label: "Vehicles", icon: Megaphone, href: "/vehicles" },
     { id: "sales-marketing", label: "Sales & Marketing", icon: Megaphone, href: "/sales-marketing" },
   ]
 
