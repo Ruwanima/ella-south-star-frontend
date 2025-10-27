@@ -60,7 +60,7 @@ export default function VehiclesPage() {
       type: 'Two-wheeler',
       price: 1800,
       priceUnit: 'Rs. 1,800 per day',
-      image: 'https://images.unsplash.com/photo-1611152588292-657c2a6b3809?w=600',
+      image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600',
       description:
         'A premium two-wheeler option featuring advanced technology and superior comfort. Ideal for travelers who want a blend of style, performance, and reliability. Experience Ella in style.',
       features: [

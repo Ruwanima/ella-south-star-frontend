@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Star, Menu, X, Wifi, MapPin, Utensils, Car, Calendar, Users, Mail, Phone, User, Facebook, Instagram, Twitter } from 'lucide-react';
 
@@ -26,6 +27,96 @@ export default function EllaSouthStarPage() {
   });
   const [reviewRating, setReviewRating] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
+
+  const packages = [
+    {
+      id: 'room-only',
+      name: 'Room Only',
+      description: 'Comfortable family room with a private balcony, ideal for a casual getaway with natural views of Ella.',
+      image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600',
+      guests: 4,
+      originalPrice: 45,
+      discountedPrice: 35,
+      discount: 22,
+      includes: ['Room accommodation', 'WiFi', 'Room service'],
+    },
+    {
+      id: 'bed-breakfast',
+      name: 'Bed & Breakfast',
+      description: 'Comfortable room with delicious breakfast included. Perfect for a morning start before exploring Ella.',
+      image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600',
+      guests: 2,
+      originalPrice: 60,
+      discountedPrice: 50,
+      discount: 17,
+      includes: ['Room accommodation', 'Breakfast', 'WiFi', 'Room service'],
+    },
+    {
+      id: 'half-board',
+      name: 'Half Board',
+      description: 'Comfortable family room with a private balcony, with breakfast and dinner included.',
+      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600',
+      guests: 4,
+      originalPrice: 80,
+      discountedPrice: 53,
+      discount: 34,
+      includes: ['Room accommodation', 'Breakfast', 'Dinner', 'WiFi', 'Room service'],
+    },
+  ];
+
+  const vehicles = [
+    {
+      id: 'tvs-125',
+      name: '125cc TVS',
+      type: 'Two-wheeler',
+      price: 1000,
+      priceUnit: 'Rs. 1,000 per day',
+      image: 'https://www.tvsmotor.com/lk/-/media/Feature/IB/Vehicles/Details/Premium/RAIDER/Mob/Product-Listing/RAIDER.png?la=en&h=360&w=606&hash=9173FCC86051E5C95D6A153579EBC102B8F3622A',
+      description:
+        'Explore Ella with our reliable and affordable 125cc TVS. Perfect for solo travelers or couples looking to discover scenic routes and hidden attractions. Fuel efficient and easy to ride.',
+      features: [
+        'Fuel efficient',
+        'Easy to maneuver',
+        'Comfortable seating',
+        'Reliable performance',
+      ],
+      imagePosition: 'right',
+    },
+    {
+      id: 'tvs-hunk-125',
+      name: 'TVS Ntorq 125',
+      type: 'Two-wheeler',
+      price: 1500,
+      priceUnit: 'Rs. 1,500 per day',
+      image: 'https://www.tvsmotor.com/lk/-/media/Feature/IB/Columbia/Deatils/Premium/Ntorq-RE/Overview/web/1.jpg',
+      description:
+        'Experience style and comfort with our TVS Ntorq 125. A sporty two-wheeler designed for comfort and performance. Perfect for exploring Ella\'s winding roads and enjoying the scenic beauty.',
+      features: [
+        'Sporty design',
+        'Advanced features',
+        'Comfortable ride',
+        'Great for sightseeing',
+      ],
+      imagePosition: 'left',
+    },
+    {
+      id: 'tvs-ntorq',
+      name: 'TVS Ntorq 125',
+      type: 'Two-wheeler',
+      price: 1800,
+      priceUnit: 'Rs. 1,800 per day',
+image: 'https://www.tvsmotor.com/lk/-/media/Feature/IB/Webp-Images/Premium/Ntorq-125-Greay/Web/Overview/1.webp',
+      description:
+        'A premium two-wheeler option featuring advanced technology and superior comfort. Ideal for travelers who want a blend of style, performance, and reliability. Experience Ella in style.',
+      features: [
+        'Premium comfort',
+        'Advanced technology',
+        'Excellent performance',
+        'Stylish appearance',
+      ],
+      imagePosition: 'right',
+    },
+  ];
 
   const handleBookingChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setBookingFormData({
@@ -57,11 +148,12 @@ export default function EllaSouthStarPage() {
   };
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
+    { href: '/', label: 'Home' },
     { href: '#about', label: 'About Us' },
     { href: '#accommodations', label: 'Accommodations' },
-    { href: '#services', label: 'Services' },
-    
+    { href: '#packages', label: 'Packages' },
+    { href: '#user-vehicles', label: 'Vehicles' },
+  { href: '/#activities', label: 'Activities' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -83,9 +175,9 @@ export default function EllaSouthStarPage() {
               ))}
             </ul>
 
-            <button className="hidden md:block bg-emerald-700 text-white px-6 py-2 rounded-md hover:bg-emerald-800 transition">
+            <Link href="/booking" className="bg-emerald-700 text-white px-6 py-2 rounded-md hover:bg-emerald-800 transition inline-block">
               Book Now
-            </button>
+            </Link>
 
             <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -107,9 +199,9 @@ export default function EllaSouthStarPage() {
                   </li>
                 ))}
                 <li>
-                  <button className="w-full bg-emerald-700 text-white px-6 py-2 rounded-md hover:bg-emerald-800 transition">
+                  <Link href="/booking" className="w-full bg-emerald-700 text-white px-6 py-2 rounded-md hover:bg-emerald-800 transition inline-block text-center">
                     Book Now
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -361,6 +453,285 @@ export default function EllaSouthStarPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Packages Section */}
+      <section id="packages" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif mb-4 text-emerald-800">Packages</h2>
+            <div className="w-20 h-1 bg-emerald-700 mx-auto mb-4"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Choose the perfect package for your stay at Ella South Star
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {packages.map((pkg) => (
+              <div
+                key={pkg.id}
+                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow h-full cursor-pointer"
+              >
+                {/* Package Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={pkg.image}
+                    alt={pkg.name}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+
+                {/* Package Info */}
+                <div className="p-6">
+                  <h3 className="text-2xl font-serif text-emerald-800 mb-2">{pkg.name}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{pkg.description}</p>
+
+                  {/* Guests */}
+                  <div className="flex items-center gap-2 mb-4 pb-4 border-b border-emerald-100">
+                    <Users className="w-5 h-5 text-emerald-700" />
+                    <span className="text-sm text-gray-600">{pkg.guests} guests</span>
+                  </div>
+
+                  {/* Pricing */}
+                  <div className="mb-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-2xl font-bold text-emerald-700">${pkg.discountedPrice}</span>
+                      <span className="text-lg text-gray-400 line-through">${pkg.originalPrice}</span>
+                      <span className="bg-emerald-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        SAVE {pkg.discount}%
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500">per night</p>
+                  </div>
+
+                  {/* Includes */}
+                  <div className="mb-6 pb-6 border-b border-emerald-100">
+                    <p className="text-xs text-gray-600 mb-2 font-semibold">INCLUDES:</p>
+                    <ul className="space-y-1">
+                      {pkg.includes.map((item, idx) => (
+                        <li key={idx} className="text-xs text-gray-600 flex items-center gap-2">
+                          <span className="text-emerald-700">✓</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Buttons */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <button className="bg-gray-200 text-gray-800 py-2 rounded-md hover:bg-gray-300 transition font-medium text-sm cursor-pointer">
+                      Details
+                    </button>
+                    <button className="bg-emerald-700 text-white py-2 rounded-md hover:bg-emerald-800 transition font-medium text-sm cursor-pointer">
+                      Book Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vehicles Section */}
+      <section id="user-vehicles" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif mb-4 text-emerald-800">Rent a Vehicle</h2>
+            <div className="w-20 h-1 bg-emerald-700 mx-auto mb-4"></div>
+            <p className="text-xl max-w-2xl mx-auto text-gray-600">
+              Explore Ella at your own pace with our reliable vehicle rental service
+            </p>
+          </div>
+
+          <div className="space-y-20">
+            {vehicles.map((vehicle, index) => (
+              <div key={vehicle.id}>
+                {/* Vehicle Card */}
+                <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                  {/* Left Column - Image or Text */}
+                  {vehicle.imagePosition === 'left' ? (
+                    <>
+                      {/* Image - Left */}
+                      <div className="relative h-80 rounded-lg overflow-hidden shadow-lg">
+                        <Image
+                          src={vehicle.image}
+                          alt={vehicle.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+
+                      {/* Content - Right */}
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-3xl font-serif text-emerald-800 mb-2">
+                            {vehicle.name}
+                          </h3>
+                          <p className="text-gray-600 text-sm font-medium">{vehicle.type}</p>
+                        </div>
+
+                        <p className="text-gray-700 leading-relaxed text-lg">
+                          {vehicle.description}
+                        </p>
+
+                        <div className="bg-emerald-50 border-2 border-emerald-200 rounded-lg p-6">
+                          <p className="text-gray-600 text-sm mb-3 font-semibold">FEATURES:</p>
+                          <ul className="space-y-2">
+                            {vehicle.features.map((feature, idx) => (
+                              <li
+                                key={idx}
+                                className="flex items-center gap-3 text-gray-700"
+                              >
+                                <span className="text-emerald-700 text-lg">✓</span>
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="flex items-center gap-4">
+                          <div>
+                            <p className="text-gray-600 text-sm">Price per day</p>
+                            <p className="text-2xl font-bold text-emerald-700">
+                              {vehicle.priceUnit}
+                            </p>
+                          </div>
+                          <button className="ml-auto bg-emerald-700 text-white px-8 py-3 rounded-md hover:bg-emerald-800 transition font-semibold">
+                            Rent Now
+                          </button>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Content - Left */}
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-3xl font-serif text-emerald-800 mb-2">
+                            {vehicle.name}
+                          </h3>
+                          <p className="text-gray-600 text-sm font-medium">{vehicle.type}</p>
+                        </div>
+
+                        <p className="text-gray-700 leading-relaxed text-lg">
+                          {vehicle.description}
+                        </p>
+
+                        <div className="bg-emerald-50 border-2 border-emerald-200 rounded-lg p-6">
+                          <p className="text-gray-600 text-sm mb-3 font-semibold">FEATURES:</p>
+                          <ul className="space-y-2">
+                            {vehicle.features.map((feature, idx) => (
+                              <li
+                                key={idx}
+                                className="flex items-center gap-3 text-gray-700"
+                              >
+                                <span className="text-emerald-700 text-lg">✓</span>
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="flex items-center gap-4">
+                          <div>
+                            <p className="text-gray-600 text-sm">Price per day</p>
+                            <p className="text-2xl font-bold text-emerald-700">
+                              {vehicle.priceUnit}
+                            </p>
+                          </div>
+                          <button className="ml-auto bg-emerald-700 text-white px-8 py-3 rounded-md hover:bg-emerald-800 transition font-semibold">
+                            Rent Now
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Image - Right */}
+                      <div className="relative h-80 rounded-lg overflow-hidden shadow-lg">
+                        <Image
+                          src={vehicle.image}
+                          alt={vehicle.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                {/* Divider */}
+                {index < vehicles.length - 1 && (
+                  <div className="my-16 border-t border-gray-200"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Activities Section */}
+      <section id="activities" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif mb-4 text-emerald-800">Activities & Experiences</h2>
+            <div className="w-20 h-1 bg-emerald-700 mx-auto mb-4"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto">Explore curated activities around Ella — scenic train rides, hikes, waterfalls and local experiences. Click below to see the full activities page.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div className="relative h-56">
+                <Image
+                  src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600"
+                  alt="Nine Arch Bridge"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-serif mb-3 text-emerald-800">Scenic Train Ride</h3>
+                <p className="text-gray-600 mb-4">One of the world's most scenic train journeys — don't miss the Nine Arch Bridge.</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div className="relative h-56">
+                <Image
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600"
+                  alt="Little Adam's Peak"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-serif mb-3 text-emerald-800">Little Adam's Peak</h3>
+                <p className="text-gray-600 mb-4">A gentle hike with panoramic views of the Ella Gap — perfect at sunrise.</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div className="relative h-56">
+                <Image
+                  src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600"
+                  alt="Ravana Falls"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-serif mb-3 text-emerald-800">Ravana Falls</h3>
+                <p className="text-gray-600 mb-4">A nearby waterfall worth visiting for photos and a refreshing dip.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link href="/activities" className="inline-block bg-emerald-700 text-white px-8 py-3 rounded-md hover:bg-emerald-800 transition">
+              View all activities
+            </Link>
           </div>
         </div>
       </section>
@@ -628,6 +999,16 @@ export default function EllaSouthStarPage() {
                 <li>
                   <a href="#accommodations" className="hover:text-white transition">
                     Accommodations
+                  </a>
+                </li>
+                <li>
+                  <a href="#packages" className="hover:text-white transition">
+                    Packages
+                  </a>
+                </li>
+                <li>
+                  <a href="#user-vehicles" className="hover:text-white transition">
+                    Vehicles
                   </a>
                 </li>
                 <li>
