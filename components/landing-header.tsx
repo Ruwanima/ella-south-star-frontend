@@ -8,20 +8,20 @@ export default function LandingHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: '/landingpage', label: 'Home' },
-    { href: '/landingpage#about', label: 'About Us' },
-    { href: '/accommodations', label: 'Accommodations' },
-    { href: '/packages', label: 'Packages' },
-    { href: '/vehicles', label: 'Vehicles' },
-    { href: '/landingpage#services', label: 'Services' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: 'Home' },
+    { href: '/#about', label: 'About Us' },
+    { href: '/#accommodations', label: 'Accommodations' },
+    { href: '/#packages', label: 'Packages' },
+    { href: '/#user-vehicles', label: 'Vehicles' },
+    { href: '/#activities', label: 'Activities' },
+    { href: '/#contact', label: 'Contact' },
   ];
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link href="/landingpage" className="text-2xl font-serif text-emerald-700 hover:text-emerald-800 transition-colors">
+          <Link href="/" className="text-2xl font-serif text-emerald-700 hover:text-emerald-800 transition-colors">
             Ella
           </Link>
 
