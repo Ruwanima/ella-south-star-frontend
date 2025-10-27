@@ -11,6 +11,8 @@ export default function ActivitiesDetailPage() {
     { href: '/', label: 'Home' },
     { href: '#about', label: 'About Us' },
     { href: '#accommodations', label: 'Accommodations' },
+     { href: '/packages', label: 'Packages' },
+    { href: '/user-vehicles', label: 'Vehicles' },
     { href: '#activities', label: 'Activities' },
     { href: '#contact', label: 'Contact' },
   ];
