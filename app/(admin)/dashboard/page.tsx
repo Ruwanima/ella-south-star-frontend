@@ -114,7 +114,7 @@ export default function Dashboard() {
         {/* Revenue Chart */}
         <Card className="p-6 mb-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
           <div className="mb-6">
-            <h2 className="text-xl font-bold mb-1 text-gray-800">€ 102.5M</h2>
+            <h2 className="text-xl font-bold mb-1 text-gray-800">Rs. 12.5M</h2>
             <p className="text-sm text-gray-500">Total Revenue</p>
           </div>
           <ResponsiveContainer width="100%" height={300}>
